@@ -745,7 +745,7 @@ section.footer-w3-agileits p.text-center a:hover  {
   white-space: nowrap;
   background: rgba(0, 0, 0, 0.55) image-url('cd-top-arrow.svg') no-repeat center 50%;
   background-size:70%;
-  border:1px solid #fff;
+  border:1px solid $orange;
   visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity .3s 0s, visibility 0s .3s;

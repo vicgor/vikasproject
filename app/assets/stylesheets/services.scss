@@ -1,0 +1,301 @@
+.ch-item {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  cursor: default;
+}
+
+.ch-info-wrap, .ch-info {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+}
+
+.ch-info-wrap {
+  top: 20px;
+  left: 20px;
+  background: #f9f9f9;
+  box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.2), inset 0 0 3px rgba(115, 114, 23, 0.8);
+}
+
+.ch-info {
+  > div {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-position: center center;
+    -webkit-backface-visibility: hidden;
+  }
+  .ch-info-front {
+    -webkit-transition: all 0.6s ease-in-out;
+    -moz-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+    -ms-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+  }
+  .ch-info-back1, .ch-info-back2, .ch-info-back3, .ch-info-back4, .ch-info-back5, .ch-info-back6 {
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+    -webkit-transition: all 0.4s ease-in-out 0.2s;
+    -moz-transition: all 0.4s ease-in-out 0.2s;
+    -o-transition: all 0.4s ease-in-out 0.2s;
+    -ms-transition: all 0.4s ease-in-out 0.2s;
+    transition: all 0.4s ease-in-out 0.2s;
+  }
+}
+
+.ch-img-1 {
+  background-image: image-url('serv-img1.jpg');
+}
+
+.ch-info .ch-info-back1 {
+  background-image: image-url('serv-img1-1.jpg');
+}
+
+.ch-img-2 {
+  background-image: image-url('serv-img2.jpg');
+}
+
+.ch-info .ch-info-back2 {
+  background-image: image-url('serv-img2-2.jpg');
+}
+
+.ch-img-3 {
+  background-image: image-url('serv-img3.jpg');
+}
+
+.ch-info .ch-info-back3 {
+  background-image: image-url('serv-img3-3.jpg');
+}
+
+.ch-img-4 {
+  background-image: image-url('serv-img4.jpg');
+}
+
+.ch-info .ch-info-back4 {
+  background-image: image-url('serv-img4-4.jpg');
+}
+
+.ch-img-5 {
+  background-image: image-url('serv-img5.jpg');
+}
+
+.ch-info .ch-info-back5 {
+  background-image: image-url('serv-img5-5.jpg');
+}
+
+.ch-img-6 {
+  background-image: image-url('serv-img6.jpg');
+}
+
+.ch-info {
+  .ch-info-back6 {
+    background-image: image-url('serv-img6-6.jpg');
+  }
+  h4 {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 18px;
+    margin: 0;
+    padding: 60px 0 15px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  p {
+    color: #fff;
+    padding: 10px 5px 0;
+    font-style: italic;
+    margin: 0 30px;
+    font-size: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    a {
+      display: block;
+      color: #e7615e;
+      font-style: normal;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 9px;
+      letter-spacing: 1px;
+      padding-top: 4px;
+      font-family: 'Open Sans', Arial, sans-serif;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.ch-item:hover {
+  .ch-info-front {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    opacity: 0;
+  }
+  .ch-info-back1, .ch-info-back2, .ch-info-back3, .ch-info-back4, .ch-info-back5, .ch-info-back6 {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+
+
+
+
+section.service-wthree, section.team {
+  padding: 100px 0;
+  h3.text-center {
+    font-size: 40px;
+    font-weight: normal;
+    color: #23a7f1;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+  }
+  p.text-center {
+    font-size: 16px;
+    font-weight: normal;
+    padding-bottom: 40px;
+  }
+  h5.text-center {
+    font-size: 22px;
+    font-weight: normal;
+    color: #23a7f1;
+    padding-bottom: 20px;
+    text-transform: capitalize;
+    font-family: 'Open Sans', sans-serif;
+  }
+  p.serv-p2 {
+    font-size: 14px;
+    text-align: center;
+    font-weight: normal;
+    line-height: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.ch-grid {
+  margin: 0 0 0 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+  text-align: center;
+  width: 100%;
+  &:after {
+    content: '';
+    display: table;
+  }
+}
+
+.ch-item:before {
+  content: '';
+  display: table;
+}
+
+.ch-grid {
+  &:after {
+    clear: both;
+  }
+  li {
+    width: 220px;
+    height: 220px;
+    display: inline-block;
+    margin: 20px;
+  }
+}
+
+
+
+@media (max-width:1080px) {
+section.service-wthree,section.portfolio-wthree,section.event-agileinfo,section.contact-w3l {
+    padding: 50px 0;
+}
+section.service-wthree h3.text-center,section.portfolio-wthree h3.text-center,section.event-agileinfo h3.text-center,section.work-agileinfo h3.text-center,section.contact-w3l h3.text-center {
+    font-size: 35px;
+}
+section.service-wthree p.text-center,section.portfolio-wthree p.text-center,section.event-agileinfo p.text-center,section.work-agileinfo p.text-center,section.contact-w3l p.text-center {
+    font-size: 14px;
+  padding-bottom: 30px;
+}
+.ch-grid li {
+  margin:0 auto;
+}
+section.service-wthree h5.text-center {
+    font-size: 20px;
+  padding:15px 0;
+}
+}
+
+@media (max-width:1024px) {
+section.service-wthree h3.text-center, section.portfolio-wthree h3.text-center, section.event-agileinfo h3.text-center, section.work-agileinfo h3.text-center, section.contact-w3l h3.text-center {
+    font-size: 30px;
+}
+}
+
+@media (max-width:640px) {
+section.service-wthree h3.text-center {
+    font-size: 25px;
+  padding-bottom: 10px;
+}
+}
+
+
+@media (max-width:480px) {
+section.service-wthree p.text-center {
+    font-size: 14px;
+    padding-bottom: 20px;
+    line-height: 30px;
+}
+}
+
+@media (max-width: 414px) {
+section.service-wthree {
+  padding:30px 0;
+}
+}
+
+@media (max-width: 320px) {
+section.service-wthree p.text-center {
+    font-size: 13px;
+    padding-bottom: 20px;
+    line-height: 30px;
+}
+section.service-wthree p.serv-p2 {
+    font-size: 13px;
+    text-align: center;
+    font-weight: normal;
+    line-height: 30px;
+    padding-bottom: 30px;
+}
+}
+
+@media (max-width: 320px) {
+section.service-wthree h3.text-center{
+    font-size: 22px;
+    padding-bottom: 10px;
+}
+section.service-wthree h5.text-center {
+    font-size: 19px;
+    padding: 10px 0;
+}
+}
+
+

@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  */
+$orange: #ff4308;
 @import 'font-awesome';
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -19,3 +20,8 @@
 @import 'jQuery.lightninBox';
 @import 'stub';
 @import 'style';
+@import 'services';
+@import 'company_info';
+@import 'testimonials';
+@import 'team';
+

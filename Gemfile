@@ -32,6 +32,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'pg'
 gem "font-awesome-rails"
+gem "paperclip", "~> 5.0.0"
+gem 'rails_admin', '~> 1.0'
+gem 'devise', '~> 4.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

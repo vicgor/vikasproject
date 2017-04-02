@@ -1,23 +1,22 @@
 <!-- topbar -->
 <div class="topbar-w3ls">
 	<div class="container">
-		<a href="index.html" class="logo">
-			<h1>
-				<%= fa_icon "ship", aria: { hidden: true } %>
-				Cruise
-				<%= fa_icon "ship", aria: { hidden: true } %>	
-			</h1>
-		</a>		
+		<%= link_to root_path, class: 'logo' do %>
+			<%= image_tag("Logo.svg", alt: 'img01', class: "img-responsive") %>
+		<% end %>	
 		<div class="top-agileits">
 			<div class="top-w3l1">
-				<span class="glyphicon glyphicon-phone-alt"></span> 	
-				<p class="agile1">+1 515 151515</p>
-				<p class="agile2">+1 010 101010</p>
+				<span class="glyphicon glyphicon-phone-alt"></span>
+					
+					<%- @company.phones.each_with_index do |phone, i| %>	
+						<p class="agile<%= i + 1 %>"><%= phone.number %></p>
+					<% end %>
+				
 			</div>		
 			<div class="top-w3l2">
 				<span class="glyphicon glyphicon-map-marker"></span>
-				<p class="agileits1">77 Jack Street</p> 
-				<p class="agileits2">Chicago, USA</p>
+				<p class="agileits1"><%= @company.address %></p> 
+				<p class="agileits2">Минск</p>
 			</div>
 			<div class="clearfix"></div>
 		</div>
@@ -42,9 +41,10 @@
 						<li class="active"><a href="index.html" class="page-scroll">Home</a></li>
 						<li><a href="#about" class="page-scroll">About</a></li>
 						<li><a href="#service" class="page-scroll">Services</a></li>
-						<li><a href="#gallery" class="page-scroll">Gallery</a></li>
+						<li><a href="#gallery" class="page-scroll">Новости</a></li>
 						<li><a href="#team" class="page-scroll">Team</a></li>
 						<li><a href="#contact" class="page-scroll">Contact</a></li>
+						<li><a href="#contact" class="page-scroll">Отзывы</a></li>
 					</ul>
 				</div>
 			</div>
@@ -76,7 +76,7 @@
 					<figure>
 						<%= image_tag("about-img2.jpg", alt: 'img01', class: "img-responsive") %>
 						<figcaption>
-							<a href="<%= image_path('about-img.jpg') %>" class="lightninBox" data-lb-group="1">View More</a>
+							<!-- <a href="<%= image_path('about-img.jpg') %>" class="lightninBox" data-lb-group="1">View More</a> -->
 						</figcaption>
 					</figure>
 				</li>
@@ -97,35 +97,36 @@
 <!-- services -->
 <section class="service-agileinfo" id="service">
 	<div class="container">
-		<h3 class="text-center" data-aos="zoom-in">Our Services</h3>
-		<div class="col-lg-3 col-md-3 col-sm-6" data-aos="flip-down">
-			<%= image_tag("ship.png", class: "img-responsive") %>
-			<h4 class="text-center">Lorem ipsum dolor</h4>
-			<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sem elit, finibus et egestas ut, condimentum ut neque.</p>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-6" data-aos="flip-down">
-			<%= image_tag("captain.png", class: "img-responsive") %>
-			<h4 class="text-center">adipiscing elit</h4>
-			<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sem elit, finibus et egestas ut, condimentum ut neque.</p>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-6" data-aos="flip-down">
-			<%= image_tag("anchor.png", class: "img-responsive") %>
-			<h4 class="text-center">Aenean sem elit</h4>
-			<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sem elit, finibus et egestas ut, condimentum ut neque.</p>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-6" data-aos="flip-down">
-			<%= image_tag("baggage.png", class: "img-responsive") %>
-			<h4 class="text-center">condimentum ut</h4>
-			<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sem elit, finibus et egestas ut, condimentum ut neque.</p>
-		</div>
+		<h3 class="text-center" data-aos="zoom-in">Наши услуги</h3>
+		<%- @services.each_with_index do |service, i| %>
+			<div class="col-lg-3 col-md-3 col-sm-6" data-aos="flip-down">
+				<ul class='ch-grid'>
+          <li>
+						<div class="ch-item ch-img-<%= i+1 %>">
+		          <div class="ch-info-wrap">
+		            <div class="ch-info">
+		              <div class="ch-info-front ch-img-<%= i+1 %>"></div>
+		              <div class="ch-info-back<%= i+1 %>">
+	                  <h4> Ваш Автоэлектрик</h4>
+	                  <p> Best In Service </p>
+	                </div>
+		            </div>
+		          </div>
+		         </div>
+		       </li>
+		     </ul>
+				<h4 class="text-center"><%= service.title %></h4>
+				<p class="text-center"><%= service.description %></p>
+			</div>
+		<% end %>
 		<div class="clearfix"></div>
 	</div>
 </section>
 <!-- /services -->
 <!-- gallery -->
-<section class="gallery-info" id="gallery">
-	<div class="container">
-		<h3 class="text-center" data-aos="zoom-in">Our Gallery</h3>
+<section class="gallery-info testimonials" id="gallery">
+	<div class="container"  data-aos="zoom-in">
+		<!-- <h3 class="text-center" data-aos="zoom-in">Our Gallery</h3>
 		<ul class="clearfix demo">
 			<li data-aos="flip-down"><%= image_tag("gallery-img1.jpg", class: "img-responsive") %></li>
 			<li data-aos="flip-down"><%= image_tag("gallery-img2.jpg", class: "img-responsive") %></li>
@@ -135,67 +136,108 @@
 			<li data-aos="flip-down"><%= image_tag("gallery-img6.jpg", class: "img-responsive") %></li>
 			<li data-aos="flip-down"><%= image_tag("gallery-img7.jpg", class: "img-responsive") %></li>
 			<li data-aos="flip-down"><%= image_tag("gallery-img8.jpg", class: "img-responsive") %></li>
-		</ul>
-    </div>
+		</ul> -->
+		<div class="head-top-w3ls"><i class="fa fa-graduation-cap white" aria-hidden="true"></i></div>
+		<h5 class="title-w3 head">Отзывы</h5>
+		<div class="callbacks_container test-agile">
+			<ul class="rslides" id="slider1">
+				<%- @testimonials.each do |testimonial| %>
+					<li>
+					
+						<div class="test-monials">
+							<p><%= testimonial.text %></p>
+							<h4><%= testimonial.username %></h4>
+						</div>
+					</li>
+				<% end %>
+			</ul>	
+		</div>
+		<div class="clearfix"></div>
+   </div>
 </section>
 <!-- /gallery -->
 <!-- team -->
 <section class="team-w3" id="team">
 	<div class="container">
-		<h3 class="text-center">Meet Our Team</h3>
-		<div class="col-lg-3 col-md-3 col-sm-6 team-w3l1" data-aos="flip-right">
-			<%= image_tag("team-img1.jpg", class: "img-responsive") %>
-			<h4>Johnny Blaze</h4>
-			<ul class="social-icons1">
-				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="#"><i class="fa fa-youtube"></i></a></li>
-				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-			</ul>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-6 team-w3l1" data-aos="flip-left">
-			<%= image_tag("team-img2.jpg", class: "img-responsive") %>
-			<h4>Elizabeth</h4>
-			<ul class="social-icons1">
-				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="#"><i class="fa fa-youtube"></i></a></li>
-				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-			</ul>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-6 team-w3l2" data-aos="flip-right">
-			<%= image_tag("team-img3.jpg", class: "img-responsive") %>
-			<h4>Max Payne</h4>
-			<ul class="social-icons1">
-				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="#"><i class="fa fa-youtube"></i></a></li>
-				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-			</ul>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-6 team-w3l2" data-aos="flip-left">
-			<%= image_tag("team-img4.jpg", class: "img-responsive") %>
-			<h4>Diana</h4>
-			<ul class="social-icons1">
-				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="#"><i class="fa fa-youtube"></i></a></li>
-				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-			</ul>
-		</div>
+		<h3 class="text-center">Наши сотрудники</h3>
+		<div class="col-lg-3 col-md-3 col-sm-6">
+    </div>
+		<%- @team.each do |member| %>
+			<div class="col-lg-3 col-md-3 col-sm-6 team-w3l1" data-aos="flip-right">
+				<div class="card">
+					<div class="card-image">
+          <%= image_tag(member.avatar.url(:medium), class: "img-responsive card-img-top") %>
+          </div>
+          <div class="card-block">
+            <h4> <%= member.name %> </h4>
+          </div>
+       </div>
+     </div>
+		<% end %>
+		<div class="col-lg-3 col-md-3 col-sm-6"></div>
 		<div class="clearfix"></div>	
 	</div>
 </section>
 <!-- /team -->
 <!-- map -->
-<section class="map-w3" data-aos="zoom-in">
+<!-- <section class="map-w3" data-aos="zoom-in">
 	<iframe class="googlemaps" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d380510.6741687111!2d-88.01234121699822!3d41.83390417061058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1455598377120" style="border:0" allowfullscreen></iframe>
-</section>
+</section> -->
 <!-- /map -->
 <!-- contact -->
-<section class="contact-w3-agileits" id="contact">
+<section class="contact-w3-agileits address-agileits" id="contact">
 	<div class="container">
-		<h3 class="text-center" data-aos="zoom-in">Get In Touch</h3>
+		<div class="col-lg-4 col-md-4 addr-agileinfo1">
+      <div class="addr-w3-agile">
+        <div class="col-xs-4 addr-agileits1" data-aos="zoom-in">
+          <div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1b">
+            <i class="hi-icon fa fa-mobile" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="col-xs-8 addr-agileits2" data-aos="zoom-in">
+          <div class="addr-w3l">
+            <h3> Телефон </h3>
+            <%- @company.phones.each do |phone| %>
+              <p> <%= phone.number %>
+            <% end %>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 addr-agileinfo2">
+      <div class="addr-w3-agile">
+        <div class="col-xs-4 addr-agileits1" data-aos="zoom-in">
+          <div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1b">
+            <i class="hi-icon fa fa-map-marker" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="col-xs-8 addr-agileits2" data-aos="zoom-in">
+          <div class="addr-w3l">
+            <h3> Адрес </h3>
+            <p> <%= @company.address %>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 addr-agileinfo3">
+      <div class="addr-w3-agile">
+        <div class="col-xs-4 addr-agileits1" data-aos="zoom-in">
+          <div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1b">
+            <i class="hi-icon fa fa-envelope-o" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="col-xs-8 addr-agileits2" data-aos="zoom-in">
+          <div class="addr-w3l">
+            <h3> Email </h3>
+            <p> <a href="mailto:<%= @company.email %>"> <%= @company.email %></a></p>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+<!-- 		<h3 class="text-center" data-aos="zoom-in">Get In Touch</h3>
 		<div class="col-lg-4 col-md-4 contact-w3l1" data-aos="flip-right">
 			<h4>Subscribe to our newsletter</h4>
 			<div class="subscribe">
@@ -230,7 +272,7 @@
 				</div>
 				<div class="clearfix"></div>
 			</form>	
-		</div>
+		</div> -->
 		<div class="clearfix"></div>
 	</div>
 </section>
@@ -257,7 +299,7 @@
 			</ul>	
 		</div>
 		<div class="clearfix"></div>
-		<p class="text-center">&copy; 2017 Cruise. All Rights Reserved </p>
+		<p class="text-center">&copy; 2017 Ваш АвтоЭлектрик. All Rights Reserved </p>
 	</div>
 </section>
  <!-- /footer
@@ -265,7 +307,7 @@
 <a href="#0" class="cd-top">Top</a>
 <script type="text/javascript">
 	$(function(){
-		$(".lightninBox").lightninBox();
+		//$(".lightninBox").lightninBox();
 	});
 </script>
 <script>
@@ -273,3 +315,24 @@ $(function(){
 	$('ul.demo li').picEyes();
 });
 </script>
+
+<script>
+	// You can also use "$(window).load(function() {"
+	$(function () {
+	  // Slideshow 4
+	  $("#slider1").responsiveSlides({
+			auto: true,
+			pager:false,
+			nav:true,
+			speed: 500,
+			namespace: "callbacks",
+			before: function () {
+			  $('.events').append("<li>before event fired.</li>");
+			},
+			after: function () {
+			  $('.events').append("<li>after event fired.</li>");
+			}
+	  });
+
+	});
+ </script>
