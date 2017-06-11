@@ -46,7 +46,11 @@ RailsAdmin.config do |config|
   config.model 'Service' do
     #list do
       configure :description do
-        html_attributes rows: 20, cols: 50
+        html_attributes rows: 10, cols: 50
+      end
+
+      configure :text do
+        html_attributes rows: 30, cols: 50
       end
     #end
   end

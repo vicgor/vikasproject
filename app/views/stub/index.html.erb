@@ -1,13 +1,13 @@
 <!-- topbar -->
 <div class="topbar-w3ls">
 	<div class="container">
-		<%= link_to root_path, class: 'logo' do %>
+		<a class='logo'>
 			<%= image_tag("Logo.svg", alt: 'img01', class: "img-responsive") %>
-		<% end %>	
+		</a>	
 		<div class="top-agileits">
 			<div class="top-w3l1">
 				<span class="glyphicon glyphicon-phone-alt"></span>
-					
+				
 					<%- @company.phones.each_with_index do |phone, i| %>	
 						<p class="agile<%= i + 1 %>"><%= phone.number %></p>
 					<% end %>
@@ -38,13 +38,12 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav cl-effect-7">
-						<li class="active"><a href="index.html" class="page-scroll">Home</a></li>
-						<li><a href="#about" class="page-scroll">About</a></li>
-						<li><a href="#service" class="page-scroll">Services</a></li>
+						<li class="active"><a href="#home" class="page-scroll">Главная</a></li>
+						<li><a href="#about" class="page-scroll">О компании</a></li>
+						<li><a href="#service" class="page-scroll">Услуги</a></li>
 						<li><a href="#gallery" class="page-scroll">Новости</a></li>
-						<li><a href="#team" class="page-scroll">Team</a></li>
-						<li><a href="#contact" class="page-scroll">Contact</a></li>
-						<li><a href="#contact" class="page-scroll">Отзывы</a></li>
+						<li><a href="#gallery" class="page-scroll">Отзывы</a></li>
+						<li><a href="#contact" class="page-scroll">Контакты</a></li>
 					</ul>
 				</div>
 			</div>
@@ -53,92 +52,90 @@
 </div>
 <!-- /navigation -->
 <!-- banner -->
-<section class="banner-w3ls">
+<section class="banner-w3ls"  id="home">
 		<div id="block" data-vide-bg="<%= video_path('car') %>" data-vide-options="position: 0% 50%">
 			<div class="overlay">
-				<h2>Enjoy Cruising</h2>
-				<h3>Step Into The Cruising</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed bibendum felis. Curabitur dignissim, diam sed fermentum pulvinar, leo mi ultricies risus, vitae congue tellus mi sed augue. Etiam euismod rhoncus diam at tempor. Cras porta nec ipsum a finibus.Vestibulum pretium egestas nisi semper mattis. </p>		
+				<h2>Качественно. Быстро. Доступно</h2>
+				<h3>Услуги автоэлектрика</h3>
+				<p align="center">
+				   Компьютерная диагностика <%= fa_icon "circle" %> Ремонт электроники<br>
+				   Круглосуточно с выездом<%= fa_icon "circle" %>Легковые, грузовые автомобили и спецтехника<br>
+			  </p>	
 			</div>
 		</div>	
 </section>
 <!-- /banner -->
-<!-- about -->
-<section class="about-wthree" id="about">
-	<div class="container">
-		<div class="col-lg-6 col-md-6 col-sm-12" data-aos="flip-right">
-			<h3 class="text-center">About Us</h3>
-			<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed bibendum felis. Curabitur dignissim, diam sed fermentum pulvinar, leo mi ultricies risus, vitae congue tellus mi sed augue. Etiam euismod rhoncus diam at tempor. Cras porta nec ipsum a finibus. Vestibulum pretium egestas nisi semper mattis. Etiam dui neque, sollicitudin in hendrerit nec, laoreet vitae tellus.</p>
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-12" data-aos="flip-left">
-			<ul class="grid cs-style-1">
-				<li>
-					<figure>
-						<%= image_tag("about-img2.jpg", alt: 'img01', class: "img-responsive") %>
-						<figcaption>
-							<!-- <a href="<%= image_path('about-img.jpg') %>" class="lightninBox" data-lb-group="1">View More</a> -->
-						</figcaption>
-					</figure>
-				</li>
-			</ul>
-		</div>
-		<div class="clearfix"></div>
-	</div>
+<!-- services -->
+<section class="service-agileinfo" id="service">
+  <div class="container">
+    <h3 class="text-center" data-aos="zoom-in">Наши услуги</h3>
+    <%- @services.each_with_index do |service, i| %>
+      <div class="col-lg-3 col-md-3 col-sm-6" data-aos="flip-down">
+        <ul class='ch-grid'>
+          <li>
+            <div class="ch-item ch-img-<%= i+1 %>">
+              <div class="ch-info-wrap">
+                <div class="ch-info">
+                  <div class="ch-info-front ch-img-<%= i+1 %>"></div>
+                  <div class="ch-info-back<%= i+1 %>">
+                    <h4> Ваш Автоэлектрик</h4>
+                    <p> Best In Service </p>
+                  </div>
+                </div>
+              </div>
+             </div>
+           </li>
+         </ul>
+        <h4 class="text-center"><a href="#" data-toggle="modal" data-target="#service<%= service.id %>"><%= service.title %></a></h4>
+        <p class="text-center"><%= service.description %></p>
+  
+      </div>
+    <% end %>
+    <div class="clearfix"></div>
+  </div>
 </section>
-<!-- /about -->
+<!-- /services -->
 <!-- divider -->
 <section class="divider-wthree">
 	<div class="container">
-		<h3 class="text-center" data-aos="zoom-in">Cruising - Enjoy The Difference.</h3>
-		<p class="text-center" data-aos="zoom-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sem elit, finibus et egestas ut, condimentum ut neque.</p>
+		<h3 class="text-center" data-aos="zoom-in">НАШ ПРИОРИТЕТ - ВАШИ КОМФОРТ И БЕЗОПАСНОСТЬ</h3>
+		<p class="text-center" data-aos="zoom-in">
+				Мы используем только высококачественные материалы<br>
+				Мы даем гарантию на выполненный ремонт от 6 месяцев до 1 года<br>
+				Мы выполняем ремонт электроники любой сложности<br>
+				Если вы обратитесь к нам, то можете быть уверены, что ремонт будет проведен на высочайшем уровне
+		</p>
 	</div>
 </section>
 <!-- /divider -->
-<!-- services -->
-<section class="service-agileinfo" id="service">
-	<div class="container">
-		<h3 class="text-center" data-aos="zoom-in">Наши услуги</h3>
-		<%- @services.each_with_index do |service, i| %>
-			<div class="col-lg-3 col-md-3 col-sm-6" data-aos="flip-down">
-				<ul class='ch-grid'>
-          <li>
-						<div class="ch-item ch-img-<%= i+1 %>">
-		          <div class="ch-info-wrap">
-		            <div class="ch-info">
-		              <div class="ch-info-front ch-img-<%= i+1 %>"></div>
-		              <div class="ch-info-back<%= i+1 %>">
-	                  <h4> Ваш Автоэлектрик</h4>
-	                  <p> Best In Service </p>
-	                </div>
-		            </div>
-		          </div>
-		         </div>
-		       </li>
-		     </ul>
-				<h4 class="text-center"><%= service.title %></h4>
-				<p class="text-center"><%= service.description %></p>
-			</div>
-		<% end %>
-		<div class="clearfix"></div>
-	</div>
+<!-- about -->
+<section class="about-wthree" id="about">
+  <div class="container">
+    <div class="col-lg-6 col-md-6 col-sm-12" data-aos="flip-right">
+      <h3 class="text-center">О КОМПАНИИ</h3>
+      <p class="text-center"> Наша компания начала свое существование не так давно, но мы уже сейчас сумели завоевать внимание со стороны многочисленных клиентов. Качество нашей работы стало отличным способом заслужить немалый авторитет среди автолюбителей.
+         Все услуги, которые оказывает наша компания по ремонту электроники автомобилей, предоставляются с применением специализированного оборудования, а также качественных материалов от известных производителей.</p>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12" data-aos="flip-left">
+      <ul class="grid cs-style-1">
+        <li>
+          <figure>
+            <%= image_tag("about-img2.jpg", alt: 'img01', class: "img-responsive") %>
+            <figcaption>
+              <!-- <a href="<%= image_path('about-img.jpg') %>" class="lightninBox" data-lb-group="1">View More</a> -->
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+  </div>
 </section>
-<!-- /services -->
+<!-- /about -->
 <!-- gallery -->
 <section class="gallery-info testimonials" id="gallery">
 	<div class="container"  data-aos="zoom-in">
-		<!-- <h3 class="text-center" data-aos="zoom-in">Our Gallery</h3>
-		<ul class="clearfix demo">
-			<li data-aos="flip-down"><%= image_tag("gallery-img1.jpg", class: "img-responsive") %></li>
-			<li data-aos="flip-down"><%= image_tag("gallery-img2.jpg", class: "img-responsive") %></li>
-			<li data-aos="flip-down"><%= image_tag("gallery-img3.jpg", class: "img-responsive") %></li>
-			<li data-aos="flip-down"><%= image_tag("gallery-img4.jpg", class: "img-responsive") %></li>
-			<li data-aos="flip-down"><%= image_tag("gallery-img5.jpg", class: "img-responsive") %></li>
-			<li data-aos="flip-down"><%= image_tag("gallery-img6.jpg", class: "img-responsive") %></li>
-			<li data-aos="flip-down"><%= image_tag("gallery-img7.jpg", class: "img-responsive") %></li>
-			<li data-aos="flip-down"><%= image_tag("gallery-img8.jpg", class: "img-responsive") %></li>
-		</ul> -->
-		<div class="head-top-w3ls"><i class="fa fa-graduation-cap white" aria-hidden="true"></i></div>
-		<h5 class="title-w3 head">Отзывы</h5>
+		<h5 class="title-w3 head">О нас говорят</h5>
 		<div class="callbacks_container test-agile">
 			<ul class="rslides" id="slider1">
 				<%- @testimonials.each do |testimonial| %>
@@ -180,21 +177,21 @@
 </section>
 <!-- /team -->
 <!-- map -->
-<!-- <section class="map-w3" data-aos="zoom-in">
+<section class="map-w3">
 	<iframe class="googlemaps" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d380510.6741687111!2d-88.01234121699822!3d41.83390417061058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1455598377120" style="border:0" allowfullscreen></iframe>
-</section> -->
+</section>
 <!-- /map -->
 <!-- contact -->
 <section class="contact-w3-agileits address-agileits" id="contact">
 	<div class="container">
 		<div class="col-lg-4 col-md-4 addr-agileinfo1">
       <div class="addr-w3-agile">
-        <div class="col-xs-4 addr-agileits1" data-aos="zoom-in">
+        <div class="col-xs-4 addr-agileits1">
           <div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1b">
             <i class="hi-icon fa fa-mobile" aria-hidden="true"></i>
           </div>
         </div>
-        <div class="col-xs-8 addr-agileits2" data-aos="zoom-in">
+        <div class="col-xs-8 addr-agileits2">
           <div class="addr-w3l">
             <h3> Телефон </h3>
             <%- @company.phones.each do |phone| %>
@@ -207,12 +204,12 @@
     </div>
     <div class="col-lg-4 col-md-4 addr-agileinfo2">
       <div class="addr-w3-agile">
-        <div class="col-xs-4 addr-agileits1" data-aos="zoom-in">
+        <div class="col-xs-4 addr-agileits1">
           <div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1b">
             <i class="hi-icon fa fa-map-marker" aria-hidden="true"></i>
           </div>
         </div>
-        <div class="col-xs-8 addr-agileits2" data-aos="zoom-in">
+        <div class="col-xs-8 addr-agileits2">
           <div class="addr-w3l">
             <h3> Адрес </h3>
             <p> <%= @company.address %>
@@ -223,12 +220,12 @@
     </div>
     <div class="col-lg-4 col-md-4 addr-agileinfo3">
       <div class="addr-w3-agile">
-        <div class="col-xs-4 addr-agileits1" data-aos="zoom-in">
+        <div class="col-xs-4 addr-agileits1">
           <div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1b">
             <i class="hi-icon fa fa-envelope-o" aria-hidden="true"></i>
           </div>
         </div>
-        <div class="col-xs-8 addr-agileits2" data-aos="zoom-in">
+        <div class="col-xs-8 addr-agileits2">
           <div class="addr-w3l">
             <h3> Email </h3>
             <p> <a href="mailto:<%= @company.email %>"> <%= @company.email %></a></p>
@@ -282,22 +279,22 @@
 	<div class="container">
 		<div class="col-lg-8 col-md-8">
 			<ul class="w3-agile">
-				<li><a href="index.html" class="page-scroll">Home</a></li>
-				<li><a href="#about" class="page-scroll">About</a></li>
-				<li><a href="#service" class="page-scroll">Services</a></li>
-				<li><a href="#gallery" class="page-scroll">Gallery</a></li>
-				<li><a href="#team" class="page-scroll">Team</a></li>
-				<li><a href="#contact" class="page-scroll">Contact</a></li>
+				<li><%= link_to 'Главная', root_path, class: "page-scroll" %></li>
+				<li><a href="#about" class="page-scroll">О компании</a></li>
+				<li><a href="#service" class="page-scroll">Услуги</a></li>
+				<li><a href="#gallery" class="page-scroll">Новости</a></li>
+				<li><a href="#gallery" class="page-scroll">Отзывы</a></li>
+				<li><a href="#contact" class="page-scroll">Контакты</a></li>
 			</ul>
 		</div>
-		<div class="col-lg-4 col-md-4">
+		<!-- <div class="col-lg-4 col-md-4">
 			<ul class="social-icons2">
 				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 				<li><a href="#"><i class="fa fa-youtube"></i></a></li>
 				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
 			</ul>	
-		</div>
+		</div> -->
 		<div class="clearfix"></div>
 		<p class="text-center">&copy; 2017 Ваш АвтоЭлектрик. All Rights Reserved </p>
 	</div>
@@ -336,3 +333,22 @@ $(function(){
 
 	});
  </script>
+
+
+<%- @services.each_with_index do |service, i| %>
+        <!-- Modal -->
+          <div id="service<%= service.id %>" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title"><%= service.title %></h4>
+              </div>
+              <div class="modal-body">
+              <p><%= service.text %></p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!--// Modal -->
+<% end %>
