@@ -1,14 +1,15 @@
 
 section.address-agileits {
+  font-family: 'Oswald', sans-serif;
   h3 {
-    font-size: 25px;
+    font-size: 38px;
     font-weight: normal;
     color: #fff;
     padding-bottom: 15px;
     font-family: 'Open Sans', sans-serif;
   }
   p {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: normal;
     color: #fff;
     padding-bottom: 10px;
@@ -17,6 +18,15 @@ section.address-agileits {
       text-decoration: none;
     }
   }
+  .addr-w3l {
+    margin-left: 20px;
+  }
+
+  .addr-agileits2 {
+    padding: 0;
+    text-align: center;
+  }
+
 }
 
 .hi-icon a {
@@ -130,13 +140,13 @@ section.address-agileits p {
 
 @media (max-width:1080px) {
 section.address-agileits h3 {
-    font-size: 20px;
+    font-size: 25px;
 }
 section.address-agileits .addr-w3l {
     margin-left: 15px;
 }
 section.address-agileits p {
-    font-size: 14px;
+    font-size: 18px;
 }
 section.address-agileits{
 	background-size:cover;
