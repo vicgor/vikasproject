@@ -12,17 +12,12 @@
  *
  */
 $orange: #ff4308;
-@import 'font-awesome';
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'aos';
+@import "font-awesome";
 @import 'gallery';
 @import 'jQuery.lightninBox';
-@import 'stub';
 @import 'style';
-@import 'services';
-@import 'company_info';
-@import 'testimonials';
-@import 'team';
-@import 'devise';
-
+@import "stub";

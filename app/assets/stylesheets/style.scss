@@ -26,11 +26,7 @@ input[type="button"],input[type="submit"]{
 h1,h2,h3,h4,h5,h6{
 	margin:0;	
 	padding:0;
-}
-
-section:not(#contact) h3 {
-  text-transform: uppercase;
-}
+}	
 p{
 	margin:0;
 	padding:0;
@@ -77,7 +73,6 @@ body p {
     margin-top: -45px;
 	margin-bottom:10px;
 	text-align:justify;
-  font-family: 'Oswald', sans-serif;
 }
 a.logo {
     display: inline-block;
@@ -91,6 +86,10 @@ a.logo h1 {
 	color:#fff;
 	text-transform:uppercase;
 	font-family: 'Cinzel', serif;
+}
+a.logo img {
+  max-height: 40px;
+  width: auto;
 }
 a.logo h1 i.fa {
 	font-size: 25px;
@@ -116,39 +115,39 @@ a.logo h1 i.fa {
 	float:right;
 }
 .topbar-w3ls .top-w3l1 span {
-	font-size:40px;
-	color: $orange;
+	font-size:35px;
+	color:#fff;
 	margin:0;
 	text-align:center;
 	vertical-align:middle;
 }
 .topbar-w3ls .top-w3l1 p.agile1 {
-	font-size:20px;
+	font-size:14px;
 	font-weight:normal;
 	color:#fff;
 	margin: -35px 0 3px 50px;
 }
 .topbar-w3ls .top-w3l1 p.agile2 {
-	font-size: 20px;
+	font-size:14px;
 	font-weight:normal;
 	color:#fff;
 	margin:0 0 0 50px;
 }
 .topbar-w3ls .top-w3l2 span {
-	font-size:40px;
-	color: $orange;
+	font-size:35px;
+	color:#fff;
 	margin:0;
 	text-align:center;
 	vertical-align:middle;
 }
 .topbar-w3ls .top-w3l2 p.agileits1 {
-	font-size:20px;
+	font-size:14px;
 	font-weight:normal;
 	color:#fff;
 	margin: -35px 0 3px 50px;
 }
 .topbar-w3ls .top-w3l2 p.agileits2 {
-	font-size:20px;
+	font-size:14px;
 	font-weight:normal;
 	color:#fff;
 	margin:0 0 0 50px;
@@ -183,23 +182,23 @@ ul.nav.navbar-nav li {
 }
 @media (min-width: 768px) {
 	.navbar-wrapper {
-  	margin-top: 125px;
-  }
-  	.navbar-wrapper .container {
-  	padding-right: 15px;
-      padding-left: 15px;
-  }
-  	.navbar-wrapper .navbar {
-      padding-right: 0;
-      padding-left: 0;
-  }
-  	.navbar-wrapper .navbar {
-      border-radius: 4px;
-  }
+	margin-top: 125px;
+}
+	.navbar-wrapper .container {
+	padding-right: 15px;
+    padding-left: 15px;
+}
+	.navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+}
+	.navbar-wrapper .navbar {
+    border-radius: 4px;
+}
 }
 
 .navbar-nav>li>a {
-	font-size:18px;
+	font-size:17px;
 	font-weight:normal;
 	color:#fff!important;
 	position:relative;
@@ -302,16 +301,11 @@ section.banner-w3ls,#block {
 	border-right: 1px solid $orange;
 	border-bottom: 1px solid $orange;
 	position:relative;
-
-  .fa {
-    margin: 10px;
-    color: $orange;
-  }
 }
 .overlay p:before {
 	content:'';
 	position:absolute;
-	background-color: $orange;
+	background-color:$orange;
 	width:210px;
 	height:1px;
 	left:0px;
@@ -320,7 +314,7 @@ section.banner-w3ls,#block {
 .overlay p:after {
 	content:'';
 	position:absolute;
-	background-color: $orange;
+	background-color:$orange;
 	width:210px;
 	height:1px;
 	right:0px;
@@ -366,7 +360,7 @@ section.about-wthree .grid figcaption {
 	top: 0;
 	left: 0;
 	padding: 20px;
-	background: image-url('about-img.jpg') no-repeat;
+	background:image-url("about-img.jpg") no-repeat;
 	background-position:center;
 	background-size:cover;
 	-webkit-background-size:cover;
@@ -385,7 +379,7 @@ section.about-wthree .grid figcaption a {
 	padding: 5px 10px;
 	border-radius: 2px;
 	display: inline-block;
-	background: #ed4e6e;
+	background: $orange;
 	color: #fff;
 	text-decoration:none;
 	font-family: 'Cinzel', serif;
@@ -424,7 +418,7 @@ section.about-wthree .cs-style-1 figcaption a {
 /*-- divider --*/
 section.divider-wthree {
 	padding:100px 0;
-	background: image-url('divide.jpg') no-repeat;
+	background:image-url("divide.jpg") no-repeat;
 	background-attachment:fixed;
 	background-position:center;
 	background-size:100% 100%;
@@ -449,9 +443,6 @@ section.divider-wthree p.text-center {
 /*-- services --*/
 section.service-agileinfo {
 	padding:100px 0;
-  a {
-    color: #000;
-  }
 }
 section.service-agileinfo h3.text-center {
 	font-size:40px;
@@ -481,7 +472,7 @@ section.service-agileinfo p.text-center {
 /*-- gallery --*/
 section.gallery-info {
 	padding:100px 0;
-	background: image-url('gallery-img.jpg') no-repeat;
+	background:image-url("gallery-img.jpg") no-repeat;
 	background-position:center;
 	background-attachment:fixed;
 	background-size:100% 100%;
@@ -569,7 +560,7 @@ section.map-w3 iframe.googlemaps {
 /*-- contact us --*/
 section.contact-w3-agileits {
 	padding:100px 0;
-	background: image-url('contact.jpg') no-repeat;
+	background:image-url("contact.jpg") no-repeat;
 	background-position:center;
 	background-attachment:fixed;
 	background-size:100% 100%;
@@ -756,9 +747,9 @@ section.footer-w3-agileits p.text-center a:hover  {
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background: rgba(0, 0, 0, 0.55) image-url('cd-top-arrow.svg') no-repeat center 50%;
+  background: rgba(0, 0, 0, 0.55) image-url("cd-top-arrow.svg") no-repeat center 50%;
   background-size:70%;
-  border:1px solid $orange;
+  border:1px solid #fff;
   visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity .3s 0s, visibility 0s .3s;
@@ -831,98 +822,98 @@ section.banner-w3ls,#block  {
 }
 
 @media (max-width: 1080px) {
-  section.banner-w3ls,#block  {
-      height: 700px;
-  }
-  .demo > li img {
-      width: 215px;
-  }	
-  .topbar-w3ls .top-w3l1 span {
-      font-size: 30px;
-  }
-  .topbar-w3ls .top-w3l1 p.agile1 {
-      font-size: 18px;
-      margin: -32px 0 2px 40px;
-  }
-  .topbar-w3ls .top-w3l1 p.agile2 {
-      font-size: 18px;
-  	margin: 0 0 0 40px;
-  }
-  .topbar-w3ls .top-w3l2 span {
-      font-size: 30px;
-  }
-  .topbar-w3ls .top-w3l2 p.agileits1 {
-      font-size: 18px;
-      margin: -32px 0 2px 40px;
-  }
-  .topbar-w3ls .top-w3l2 p.agileits2 {
-      font-size: 18px;
-  	margin: 0px 0 0px 40px;
-  }
-  .cl-effect-2 a span {
-  	width:125px;
-  }
-  .overlay h2 {
-      font-size: 50px;
-  }
-  .overlay h3 {
-      font-size: 30px;
-  }
-  .overlay p {
-      font-size: 14px;
-  }
-  section.about-wthree .cs-style-1 figcaption a {
-      margin-top: 130px;
-  }
-  section.about-wthree p.text-center {
-      font-size: 14px;
-  }
-  section.divider-wthree p.text-center {
-      font-size: 14px;
-  }
-  section.about-wthree,section.service-agileinfo,section.gallery-info,section.team-w3,section.contact-w3-agileits {
-      padding: 40px 0;
-  }
-  section.divider-wthree {
-      padding: 80px 0;
-  }
-  section.service-agileinfo h3.text-center,section.gallery-info h3.text-center,section.team-w3 h3.text-center,section.contact-w3-agileits h3.text-center {
-      font-size: 35px;
-  }
-  section.service-agileinfo h4.text-center {
-      font-size: 18px;
-  	padding-bottom:10px;
-  }
-  .img-box ul li {
-  	width:235px;
-  }
-  section.team-w3 .grid {
-  	padding-bottom:30px;
-  }
-  section.team-w3 .grid figcaption h4 {
-  	font-size:17px;
-  	margin-top: 82%;
-  }
-  section.team-w3 .cs-style-7 figcaption ul.social-icons1 li a i.fa {
-  	width:34px;
-  	height:34px;
-  	line-height:34px;
-  }
-  section.team-w3 .grid figcaption {
-  	padding:5px;
-  }
-  section.contact-w3-agileits h4 {
-      font-size: 20px;
-  }
-  section.footer-w3-agileits ul.w3-agile li a { 
-  	font-size:15px;
-  }
-  section.footer-w3-agileits p.text-center {
-      font-size: 14px;
-  }
-  .mag {
-  	margin: 64px auto 0;
-  }
+section.banner-w3ls,#block  {
+    height: 700px;
+}
+.demo > li img {
+    width: 215px;
+}	
+.topbar-w3ls .top-w3l1 span {
+    font-size: 30px;
+}
+.topbar-w3ls .top-w3l1 p.agile1 {
+    font-size: 13px;
+    margin: -32px 0 2px 40px;
+}
+.topbar-w3ls .top-w3l1 p.agile2 {
+    font-size: 13px;
+	margin: 0 0 0 40px;
+}
+.topbar-w3ls .top-w3l2 span {
+    font-size: 30px;
+}
+.topbar-w3ls .top-w3l2 p.agileits1 {
+    font-size: 13px;
+    margin: -32px 0 2px 40px;
+}
+.topbar-w3ls .top-w3l2 p.agileits2 {
+    font-size: 13px;
+	margin: 0px 0 0px 40px;
+}
+.cl-effect-2 a span {
+	width:125px;
+}
+.overlay h2 {
+    font-size: 50px;
+}
+.overlay h3 {
+    font-size: 30px;
+}
+.overlay p {
+    font-size: 14px;
+}
+section.about-wthree .cs-style-1 figcaption a {
+    margin-top: 130px;
+}
+section.about-wthree p.text-center {
+    font-size: 14px;
+}
+section.divider-wthree p.text-center {
+    font-size: 14px;
+}
+section.about-wthree,section.service-agileinfo,section.gallery-info,section.team-w3,section.contact-w3-agileits {
+    padding: 40px 0;
+}
+section.divider-wthree {
+    padding: 80px 0;
+}
+section.service-agileinfo h3.text-center,section.gallery-info h3.text-center,section.team-w3 h3.text-center,section.contact-w3-agileits h3.text-center {
+    font-size: 35px;
+}
+section.service-agileinfo h4.text-center {
+    font-size: 18px;
+	padding-bottom:10px;
+}
+.img-box ul li {
+	width:235px;
+}
+section.team-w3 .grid {
+	padding-bottom:30px;
+}
+section.team-w3 .grid figcaption h4 {
+	font-size:17px;
+	margin-top: 82%;
+}
+section.team-w3 .cs-style-7 figcaption ul.social-icons1 li a i.fa {
+	width:34px;
+	height:34px;
+	line-height:34px;
+}
+section.team-w3 .grid figcaption {
+	padding:5px;
+}
+section.contact-w3-agileits h4 {
+    font-size: 20px;
+}
+section.footer-w3-agileits ul.w3-agile li a { 
+	font-size:15px;
+}
+section.footer-w3-agileits p.text-center {
+    font-size: 14px;
+}
+.mag {
+	margin: 64px auto 0;
+}
 }
 
 @media (max-width:1024px) {
@@ -1055,6 +1046,9 @@ a.logo {
 }
 a.logo h1 {
     font-size: 35px;
+}
+a.logo img {
+    max-height: 35px;
 }
 a.logo h1 i.fa {
     font-size: 20px;
@@ -1258,6 +1252,9 @@ section.divider-wthree h3.text-center {
 a.logo h1 {
     font-size: 30px;
 }
+a.logo img {
+  max-height: 30px;
+}
 a.logo h1 i.fa {
     font-size: 17px;
     width: 35px;
@@ -1392,6 +1389,9 @@ a.logo h1 i.fa {
 }
 a.logo h1 {
     font-size: 26px;
+}
+a.logo img {
+  max-height: 26px;
 }
 .demo > li img {
     width: 345px;
