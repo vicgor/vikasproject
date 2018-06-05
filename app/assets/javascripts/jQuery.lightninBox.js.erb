@@ -9,7 +9,7 @@
                     padding: 20,
                     margin: 20,
                     gallery: true,
-                    loaderSource: "<%= image_path('loader.gif') %>"
+                    loaderSource: "<%= asset_path('loader.gif') %>"
                 };
 
             $.extend(settings, options);
@@ -312,7 +312,7 @@
             });
 
             $(window).on("resize", function() {
-                if (trigger.opened) {
+                if (trigger && trigger.opened) {
                     size.set();
                 }
             });

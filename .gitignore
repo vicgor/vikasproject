@@ -16,6 +16,12 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/public/assets
 
 # Ignore Byebug command history file.
 .byebug_history
+
+
+# Ignore configs
+/config/cable.yml
+/config/database.yml

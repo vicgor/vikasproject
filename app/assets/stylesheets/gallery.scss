@@ -66,7 +66,7 @@ table {
   display: inline-block;
   width: 26px;
   height: 26px;
-  background: image-url('close2.png') no-repeat;
+  background: image-url("close2.png") no-repeat;
   z-index: 100;
   display: none;
 }
@@ -97,12 +97,12 @@ table {
 
 .pictures_eyes_in .prev {
   left: 35px;
-  background: image-url('Tleft.png') no-repeat;
+  background: image-url("Tleft.png") no-repeat;
 }
 
 .pictures_eyes_in .next {
   right: 35px;
-  background: image-url('Tright.png') no-repeat;
+  background: image-url("Tright.png") no-repeat;
 }
 
 .pictures_eyes_indicators {
