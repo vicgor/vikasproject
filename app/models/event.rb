@@ -1,2 +1,2 @@
-class Event < ApplicationRecord
-end
+# class Event < ApplicationRecord
+# end

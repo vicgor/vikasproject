@@ -4,7 +4,7 @@ class StubController < ApplicationController
 		load_testimonials
 		load_services
 		load_team
-		load_events
+		#load_events
 	end
 
 	def load_company_info
