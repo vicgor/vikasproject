@@ -81,7 +81,7 @@
               <div class="ch-info-wrap">
                 <div class="ch-info">
                   <div class="ch-info-front ch-img-<%= i+1 %>"></div>
-                  <div class="ch-info-back<%= i+1 %>">
+                  <div class="ch-info-back<%= i+1 %> ch-info-back">
                     <h4> Ваш Автоэлектрик</h4>
                     <p> Best In Service </p>
                   </div>
@@ -135,7 +135,7 @@
 </section>
 <!-- /about -->
 <!-- gallery -->
-<section class="gallery-info testimonials" id="testimonials">
+<section class="gallery-info testimonials divider-wthree" id="testimonials">
   <div class="container"  data-aos="zoom-in">
     <h5 class="title-w3 head uppercase">О нас говорят</h5>
     <div class="callbacks_container test-agile">
@@ -143,7 +143,9 @@
         <%- @testimonials.each do |testimonial| %>
           <li>
             <div class="test-monials">
-              <p><%= testimonial.text %></p>
+              <p><%= testimonial.text[0..334] %>
+                <a href="#" data-toggle="modal" data-target="#testimonial<%= testimonial.id %>" class="testimonial-info">...</a>
+              </p>
               <h4><%= testimonial.username %></h4>
             </div>
           </li>
@@ -292,6 +294,23 @@ $(function(){
       </div>
       <div class="modal-body service-text">
       <p><%= service.text %></p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!--// Modal -->
+<% end %>
+
+<%- @testimonials.each_with_index do |testimonial, i| %>
+  <!-- Modal -->
+  <div id="testimonial<%= testimonial.id %>" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body service-text">
+      <p><%= testimonial.text %></p>
       </div>
     </div>
   </div>

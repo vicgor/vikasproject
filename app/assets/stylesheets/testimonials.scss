@@ -102,7 +102,7 @@
   .callbacks_nav {
       position: absolute;
       -webkit-tap-highlight-color: rgba(0,0,0,0);
-      top: 78%;
+      top: 90%;
       opacity: 0.7;
       z-index: 3;
       text-indent: -9999px;
@@ -311,8 +311,8 @@
   }
   ul#slider1 p {
       color: rgba(216, 226, 232, 0.9);
-      font-size: 20px;
-      line-height: 33px;
+      font-size: 18px;
+      line-height: 25px;
   }
   h3.title,h2.title.review {
       color:#5DD28F;
@@ -403,7 +403,7 @@
       font-size: 18px;
     }
     .callbacks_nav {
-      top: 84%;
+      top: 95%;
     }
     .callbacks_nav.prev {
       left: 13em;
@@ -714,6 +714,11 @@
       width: 99%!important;
     }
     
+  }
+
+  .testimonial-info {
+    color: white;
+    font-size: 25px;
   }
 
 }
